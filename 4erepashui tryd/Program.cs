@@ -1,5 +1,6 @@
 ﻿//Zadanie1();
-DopZadanie();
+//DopZadanie();
+Calculate();
 
 /// <summary>
 /// Проверка на совпадение типов данных
@@ -82,6 +83,7 @@ void Zadanie1()
     else Console.WriteLine("Типы данных разные");
 }
 
+
 /// <summary>
 /// Конвертирование данных по типам
 /// </summary>
@@ -161,5 +163,76 @@ void DopZadanie()
             Console.WriteLine("Ошибка");
         }
     }
-    Console.ReadKey(); 
+    Console.ReadKey();
+}
+
+
+/// <summary>
+/// Калькулятор
+/// </summary>
+void Calculate()
+{
+    var choose = new List<string> { "1. Вычислить пример", "2. Возвести в степень", "3. Вычислить корень" };
+    foreach (var type in choose)
+        Console.WriteLine(type);
+    Console.WriteLine("Выберите действие");
+    int h = int.Parse(Console.ReadLine());
+    if (h == 1)
+    {
+        Console.WriteLine("Введите первое число");
+        var a = Console.ReadLine();
+        Convert.ToDouble(a.Replace('.', ','));
+        Console.WriteLine("Введите оператор");
+        char znak = Convert.ToChar(Console.ReadLine());
+        if (znak == '+' ^ znak == '-' ^ znak == '*' ^ znak == '/')
+        {
+            Console.WriteLine("Введите второе число");
+            string b = Console.ReadLine();
+            Convert.ToDouble(b.Replace('.', ','));
+            Console.WriteLine("Результат вычислений:");
+
+            if (znak == '+')
+            {
+                double c = Convert.ToDouble(a) + Convert.ToDouble(b);
+                Console.WriteLine(c);
+            }
+            else if (znak == '-')
+            {
+                double с = Convert.ToDouble(a) - Convert.ToDouble(b);
+                Console.Write(с);
+            }
+            else if (znak == '*')
+            {
+                double c = Convert.ToDouble(a) * Convert.ToDouble(b);
+                Console.WriteLine(c);
+            }
+            else if (znak == '/')
+            {
+                double c = Convert.ToDouble(a) / Convert.ToDouble(b);
+                Console.WriteLine(c);
+            }
+        }
+        else
+        {
+            Console.WriteLine("Ошибка!");
+        }
+    }
+    else if (h == 2)
+    {
+        Console.WriteLine("Введите переменную");
+        double a = double.Parse(Console.ReadLine());
+        Console.WriteLine("Введите степень");
+        double b = double.Parse(Console.ReadLine());
+        Console.WriteLine("Результат вычислений:");
+        double c = Math.Pow(a, b);
+        Console.WriteLine(c);
+    }
+    else if (h == 3)
+    {
+        Console.WriteLine("Введите переменную");
+        double a = double.Parse(Console.ReadLine());
+        double b = Math.Sqrt(a);
+        Console.WriteLine(b);
+    }
+    Console.ReadKey();
 }
