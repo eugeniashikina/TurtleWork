@@ -187,7 +187,7 @@ void Calculate()
         if (znak == '+' ^ znak == '-' ^ znak == '*' ^ znak == '/')
         {
             Console.WriteLine("Введите второе число");
-            string b = Console.ReadLine();
+            var b = Console.ReadLine();
             Convert.ToDouble(b.Replace('.', ','));
             Console.WriteLine("Результат вычислений:");
 
