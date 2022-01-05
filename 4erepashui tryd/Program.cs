@@ -1,6 +1,7 @@
 ﻿//Zadanie1();
 //DopZadanie();
-Calculate();
+//Calculate();
+Cycles();
 
 /// <summary>
 /// Проверка на совпадение типов данных
@@ -234,5 +235,60 @@ void Calculate()
         double b = Math.Sqrt(a);
         Console.WriteLine(b);
     }
+    Console.ReadKey();
+}
+
+/// <summary>
+/// Работа с циклами
+/// </summary>
+void Cycles()
+{
+    int[] mas = new int[11] { 2, 3, 4, 7, 12, -8, 0, 1, -3, 10, 6 };
+    for (int i = 0; i < mas.Length; i++)
+        Console.Write(mas[i] + " ");
+    int index = int.MinValue;
+    foreach (var item in mas)
+    {
+        if (item > index)
+        {
+            index = item;
+        }
+        else continue;
+    }
+    Console.WriteLine("\n\r1. Самый большой элемент массива: " + index);
+
+    Array.Reverse(mas);
+    int k = 0;
+    do
+    {
+        k++;
+    }
+    while (mas[k] != 0);
+    Console.WriteLine("2. Найден ноль. Индекс элемента в массиве: " + (mas.Length - 1 - k));
+
+    int sum = 0;
+    int m = 0;
+    while (m < mas.Length)
+    {
+        if (mas[m] > 0)
+        {
+            sum += mas[m];
+        }
+        m++;
+    }
+    Console.WriteLine("3. Сумма всех положительных чисел: " + sum);
+
+    double count = 0;
+    double summary = 0;
+    for(int i =0; i< mas.Length; i++)
+    {
+        if (mas[i] % 2 == 0)
+        {
+            summary += mas[i];
+            count++;
+        }
+    }
+    double average = summary/ count;
+    Console.WriteLine("4. Среднее арифметическое всех четных чисел " + average);
     Console.ReadKey();
 }
