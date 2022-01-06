@@ -1,7 +1,8 @@
 ﻿//Zadanie1();
 //DopZadanie();
 //Calculate();
-Cycles();
+//Cycles();
+Stroka();
 
 /// <summary>
 /// Проверка на совпадение типов данных
@@ -280,7 +281,7 @@ void Cycles()
 
     double count = 0;
     double summary = 0;
-    for(int i =0; i< mas.Length; i++)
+    for (int i = 0; i < mas.Length; i++)
     {
         if (mas[i] % 2 == 0)
         {
@@ -288,7 +289,75 @@ void Cycles()
             count++;
         }
     }
-    double average = summary/ count;
+    double average = summary / count;
     Console.WriteLine("4. Среднее арифметическое всех четных чисел " + average);
     Console.ReadKey();
+}
+
+/// <summary>
+/// Работа со строкой
+/// </summary>
+void Stroka()
+{
+    string s1 = "Привет, бобрёнок. Как твои дела?";
+    Console.WriteLine(s1);
+
+    Console.Write("\n\r" + "1. Метод Contains: ");
+    string s2 = "бобрёнок";
+    if (s1.Contains(s2))
+        Console.WriteLine("<3 бобрёнка");
+    else Console.WriteLine("Где бобрёнок?");
+
+    Console.Write("2. Метод Indexof: ");
+    string str = "бобрёнок";
+    int Indexofstr = s1.IndexOf(str);
+    Console.WriteLine(Indexofstr);
+
+    Console.Write("3. Метод Concat: ");
+    string s3 = "Расскажи, что у тебя нового?";
+    string s4 = s1 + " " + s3;
+    Console.WriteLine(s4);
+
+    Console.Write("4. Метод Join: ");
+    string question = "А ты знал, что";
+    string ch = "черепашка";
+    string t = "тебя";
+    string l = "любит?";
+    string[] value = new string[] { s1, question, ch, t, l };
+    string str2 = string.Join(" ", value);
+    Console.WriteLine(str2);
+
+    Console.Write("5. Метод Split: ");
+    string[] words = s1.Split(new char[] { '.' });
+    foreach (string s in words)
+    Console.Write(s);
+
+    Console.Write("\n\r" + "6. Метод Trim: ");
+    string text = "   Бобёр, обними черепашку!   ";
+    text = text.Trim();
+    Console.WriteLine(text);
+
+    Console.Write("7. Метод Substring: ");
+    string text1 = "не Я люблю бобра";
+    text1 = text1.Substring(3);
+    Console.WriteLine(text1);
+
+    Console.Write("8. Метод Insert: ");
+    string text3 = "А она тебя поцелует.";
+    text = text.Insert(text.Length, " " + text3);
+    Console.WriteLine(text);
+
+    Console.Write("9. Метод Remove: ");
+    string str9 = "Бобер, как дела?";
+    int index = str9.Length-11;
+    text = str9.Remove(index);
+    Console.WriteLine(text);
+
+    Console.Write("10. Метод Replace: ");
+    string str10 = "Бобер любит черепашку.";
+    string str11 = "Черепашка любит бобра <3";
+    str10 = str10.Replace(str10, str11);
+    Console.WriteLine(str10);
+    Console.ReadKey();
+
 }
